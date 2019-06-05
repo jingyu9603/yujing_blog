@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>R中GEO数据的预处理</title>
-      <link href="/2019/06/05/R%E4%B8%ADGEO%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E5%A4%84%E7%90%86/"/>
-      <url>/2019/06/05/R%E4%B8%ADGEO%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E5%A4%84%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<a id="more"></a><p>获得芯片探针与gene的对应关系的三种方法：  </p><ul><li>在基因芯片的厂商的官网直接下载</li><li>从NCBI里面下载文件来解析</li><li>直接使用Bioconductor包  </li></ul><p>以下是直接使用Biocondutor包的流程：</p><ul><li>获取平台与Bioconductor包之间的对应关系</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">library(BiocManager)</span><br><span class="line">BiocManager::install(&quot;GEOmetadb&quot;)</span><br><span class="line">install.packages(&quot;RSQLite&quot;)</span><br><span class="line">devtools::install_github(&quot;ggrothendieck/sqldf&quot;)</span><br><span class="line">library(GEOmetadb)</span><br><span class="line">library(RSQLite)</span><br><span class="line">library(sqldf)</span><br><span class="line">getSQLiteFile()</span><br><span class="line">con&lt;-dbConnect(RSQLite::SQLite(),&quot;GEOmetadb.sqlite&quot;)</span><br><span class="line">gplToBioc&lt;-dbGetQuery(con,&apos;select gpl,bioc_package,title from gpl where bioc_package is not null&apos;)</span><br></pre></td></tr></table></figure><ul><li><p>下载所需要的包</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(i in 1:nrow(gplToBioc))&#123;</span><br><span class="line">  platform=gplToBioc[i,1]</span><br><span class="line">  platformDB=paste(platform,&quot;.db&quot;,sep = &quot;&quot;)</span><br><span class="line">  if(platformDB %in% rownames(installed.packages()) ==FALSE)&#123;</span><br><span class="line">    BiocManager::install(platformDB)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>批量获得芯片探针与gene的对应关系</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">library(hgu133a.db)</span><br><span class="line">library(GEOquery)</span><br><span class="line">#下载GEO数据集</span><br><span class="line">GEO&lt;-&quot;GSE24673&quot;</span><br><span class="line">if(!file.exists(GEO))&#123;</span><br><span class="line">  gset&lt;-getGEO(GEO,destdir = &quot;.&quot;,getGPL = F,AnnotGPL = F)</span><br><span class="line">  save(gset,file=GEO)</span><br><span class="line">&#125;</span><br><span class="line">data&lt;-gset[[1]]</span><br><span class="line">data&lt;-exprs(data)</span><br><span class="line">ids&lt;-toTable(hgu133aSYMBOL)</span><br><span class="line">data&lt;-data[ids$probe_id,]</span><br><span class="line">ids$median&lt;-apply(data,1,median)</span><br><span class="line">ids&lt;-ids[order(ids$symbol,ids$median,decreasing = T),]</span><br><span class="line">ids&lt;-ids[!duplicated(ids$symbol),]</span><br><span class="line">data&lt;-data[ids$probe_id,]</span><br><span class="line">rownames(data)&lt;-ids$symbol</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> GEO </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Whole-exome analysis</title>
       <link href="/2019/06/05/Whole-exome_analysis/"/>
       <url>/2019/06/05/Whole-exome_analysis/</url>
