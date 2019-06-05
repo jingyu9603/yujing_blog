@@ -321,7 +321,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/05/R中GEO数据的预处理/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/06/05/R中GEO数据的预处理/" itemprop="url">R中GEO数据的预处理</a></h1>
         
 
         <div class="post-meta">
@@ -352,12 +352,12 @@
           
           
           &nbsp; | &nbsp;
-          <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title>
+          <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title="R中GEO数据的预处理">
                    &nbsp;Visitors
                    </span>
           
           
-             <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title>
+             <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title="R中GEO数据的预处理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,32 +389,20 @@
 
       
         
-          
-            <a id="more"></a>
-<hr>
-<p>title: R中GEO数据的预处理<br>tag: GEO</p>
-<hr>
-<p>获得芯片探针与gene的对应关系的三种方法：  </p>
+          <p>获得芯片探针与gene的对应关系的三种方法：  </p>
 <ul>
-<li>在基因芯片的厂商的官网直接下载</li>
-<li>从NCBI里面下载文件来解析</li>
-<li>直接使用Bioconductor包  </li>
-</ul>
-<p>以下是直接使用Biocondutor包的流程：</p>
-<ul>
-<li>获取平台与Bioconductor包之间的对应关系</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">library(BiocManager)</span><br><span class="line">BiocManager::install(&quot;GEOmetadb&quot;)</span><br><span class="line">install.packages(&quot;RSQLite&quot;)</span><br><span class="line">devtools::install_github(&quot;ggrothendieck/sqldf&quot;)</span><br><span class="line">library(GEOmetadb)</span><br><span class="line">library(RSQLite)</span><br><span class="line">library(sqldf)</span><br><span class="line">getSQLiteFile()</span><br><span class="line">con&lt;-dbConnect(RSQLite::SQLite(),&quot;GEOmetadb.sqlite&quot;)</span><br><span class="line">gplToBioc&lt;-dbGetQuery(con,&apos;select gpl,bioc_package,title from gpl where bioc_package is not null&apos;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>下载所需要的包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(i in 1:nrow(gplToBioc))&#123;</span><br><span class="line">  platform=gplToBioc[i,1]</span><br><span class="line">  platformDB=paste(platform,&quot;.db&quot;,sep = &quot;&quot;)</span><br><span class="line">  if(platformDB %in% rownames(installed.packages()) ==FALSE)&#123;</span><br><span class="line">    BiocManager::install(platformDB)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>在基因芯片的厂商的官网直接下载</p>
 </li>
-<li><p>批量获得芯片探针与gene的对应关系</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">library(hgu133a.db)</span><br><span class="line">library(GEOquery)</span><br><span class="line">#下载GEO数据集</span><br><span class="line">GEO&lt;-&quot;GSE24673&quot;</span><br><span class="line">if(!file.exists(GEO))&#123;</span><br><span class="line">  gset&lt;-getGEO(GEO,destdir = &quot;.&quot;,getGPL = F,AnnotGPL = F)</span><br><span class="line">  save(gset,file=GEO)</span><br><span class="line">&#125;</span><br><span class="line">data&lt;-gset[[1]]</span><br><span class="line">data&lt;-exprs(data)</span><br><span class="line">ids&lt;-toTable(hgu133aSYMBOL)</span><br><span class="line">data&lt;-data[ids$probe_id,]</span><br><span class="line">ids$median&lt;-apply(data,1,median)</span><br><span class="line">ids&lt;-ids[order(ids$symbol,ids$median,decreasing = T),]</span><br><span class="line">ids&lt;-ids[!duplicated(ids$symbol),]</span><br><span class="line">data&lt;-data[ids$probe_id,]</span><br><span class="line">rownames(data)&lt;-ids$symbol</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
+<li><p>从NCBI里面下载文件来解析</p>
+</li>
+<li><p>直接使用Bioconductor包  </p></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/05/R中GEO数据的预处理/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1036,6 +1024,15 @@ MSIsensor通过分别判断每个微卫星位点的稳定性，然后以不稳�
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>

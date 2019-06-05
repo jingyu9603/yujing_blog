@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="GEO,">
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="title: R中GEO数据的预处理tag: GEO  获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载 从NCBI里面下载文件来解析 直接使用Bioconductor包    以下是直接使用Biocondutor包的流程：  获取平台与Bioconductor包之间的对应关系  12345678910library(BiocManager)BiocManag">
+<meta name="description" content="获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载  从NCBI里面下载文件来解析  直接使用Bioconductor包">
+<meta name="keywords" content="GEO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jing">
+<meta property="og:title" content="R中GEO数据的预处理">
 <meta property="og:url" content="http://yoursite.com/2019/06/05/R中GEO数据的预处理/index.html">
 <meta property="og:site_name" content="Jing">
-<meta property="og:description" content="title: R中GEO数据的预处理tag: GEO  获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载 从NCBI里面下载文件来解析 直接使用Bioconductor包    以下是直接使用Biocondutor包的流程：  获取平台与Bioconductor包之间的对应关系  12345678910library(BiocManager)BiocManag">
+<meta property="og:description" content="获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载  从NCBI里面下载文件来解析  直接使用Bioconductor包">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-05T12:20:52.344Z">
+<meta property="og:updated_time" content="2019-06-05T12:23:11.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jing">
-<meta name="twitter:description" content="title: R中GEO数据的预处理tag: GEO  获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载 从NCBI里面下载文件来解析 直接使用Bioconductor包    以下是直接使用Biocondutor包的流程：  获取平台与Bioconductor包之间的对应关系  12345678910library(BiocManager)BiocManag">
+<meta name="twitter:title" content="R中GEO数据的预处理">
+<meta name="twitter:description" content="获得芯片探针与gene的对应关系的三种方法：    在基因芯片的厂商的官网直接下载  从NCBI里面下载文件来解析  直接使用Bioconductor包">
 
 
 
@@ -139,7 +140,7 @@
 
 
 
-  <title> | Jing</title>
+  <title>R中GEO数据的预处理 | Jing</title>
   
 
 
@@ -321,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">R中GEO数据的预处理</h1>
         
 
         <div class="post-meta">
@@ -352,12 +353,12 @@
           
           
           &nbsp; | &nbsp;
-          <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title>
+          <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title="R中GEO数据的预处理">
                    &nbsp;Visitors
                    </span>
           
           
-             <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title>
+             <span id="/2019/06/05/R中GEO数据的预处理/" class="leancloud_visitors" data-flag-title="R中GEO数据的预处理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,19 +394,18 @@
       
 
       
-        <a id="more"></a>
-<hr>
-<p>title: R中GEO数据的预处理<br>tag: GEO</p>
-<hr>
-<p>获得芯片探针与gene的对应关系的三种方法：  </p>
+        <p>获得芯片探针与gene的对应关系的三种方法：  </p>
 <ul>
-<li>在基因芯片的厂商的官网直接下载</li>
-<li>从NCBI里面下载文件来解析</li>
-<li>直接使用Bioconductor包  </li>
-</ul>
+<li><p>在基因芯片的厂商的官网直接下载</p>
+</li>
+<li><p>从NCBI里面下载文件来解析</p>
+</li>
+<li><p>直接使用Bioconductor包  </p>
+<a id="more"></a>
 <p>以下是直接使用Biocondutor包的流程：</p>
-<ul>
-<li>获取平台与Bioconductor包之间的对应关系</li>
+</li>
+<li><p>获取平台与Bioconductor包之间的对应关系</p>
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">library(BiocManager)</span><br><span class="line">BiocManager::install(&quot;GEOmetadb&quot;)</span><br><span class="line">install.packages(&quot;RSQLite&quot;)</span><br><span class="line">devtools::install_github(&quot;ggrothendieck/sqldf&quot;)</span><br><span class="line">library(GEOmetadb)</span><br><span class="line">library(RSQLite)</span><br><span class="line">library(sqldf)</span><br><span class="line">getSQLiteFile()</span><br><span class="line">con&lt;-dbConnect(RSQLite::SQLite(),&quot;GEOmetadb.sqlite&quot;)</span><br><span class="line">gplToBioc&lt;-dbGetQuery(con,&apos;select gpl,bioc_package,title from gpl where bioc_package is not null&apos;)</span><br></pre></td></tr></table></figure>
 
@@ -430,6 +430,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GEO/" rel="tag"># GEO</a>
+          
+        </div>
       
 
       
@@ -522,6 +528,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
