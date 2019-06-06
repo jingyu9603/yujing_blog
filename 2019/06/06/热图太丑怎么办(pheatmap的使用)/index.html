@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="pheatmap,">
 
 
 
@@ -77,13 +77,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jing">
-<meta property="og:url" content="http://yoursite.com/tags/GEO/index.html">
+<meta name="description" content="准备一个表达谱矩阵，横轴为100个基因，纵轴为208个样本，如下：首先安装pheatmap">
+<meta name="keywords" content="pheatmap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="热图太丑怎么办(pheatmap的使用)">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/热图太丑怎么办(pheatmap的使用)/index.html">
 <meta property="og:site_name" content="Jing">
+<meta property="og:description" content="准备一个表达谱矩阵，横轴为100个基因，纵轴为208个样本，如下：首先安装pheatmap">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdWGribokM45fVyhf43xu7UMqiaxrDzzbibgWEma0vZFAqQ68vtLnuDlUtA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdTvFAdTlWglNoTFWx4zO0ZLhC0wKxSotuzRO1soubZlSw6ufb17qcjg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdprlu2Wlq2pleCqxl3SOfX5UsecIqTMzAn688ibBnnBC3xLdhyiacwxfA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdXkvYsKNhh5GlnYUORFWW6UznBFTVk2Atw0AiceBZEZLayic0GzGfuCUA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdJ2EJBTl6ribkLZtpOugGr1rUZCuS4KDdW9uUuCjXicuKb9qJHj75xrKQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcd72TicwfyeQTwiaWRxleA2EJuCgMIg9zIhUa63dhfibdiaW3hgGMdJVkmmg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdczbic2EGgyAic8aBpicz9KosU9coyD7iavgUMPjiaGeqIlUqSqcpg5odyNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdgVhEB8fl6H9UR2Aj1co9MYP9nA8XkianxPLQjF3Dic7CmSs26MmO3IPg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:updated_time" content="2019-06-06T05:39:21.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jing">
+<meta name="twitter:title" content="热图太丑怎么办(pheatmap的使用)">
+<meta name="twitter:description" content="准备一个表达谱矩阵，横轴为100个基因，纵轴为208个样本，如下：首先安装pheatmap">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdWGribokM45fVyhf43xu7UMqiaxrDzzbibgWEma0vZFAqQ68vtLnuDlUtA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 
 
 
@@ -113,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/GEO/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/06/热图太丑怎么办(pheatmap的使用)/">
 
 
 
 
 
-  <title>Tag: GEO | Jing</title>
+  <title>热图太丑怎么办(pheatmap的使用) | Jing</title>
   
 
 
@@ -138,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,52 +278,227 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>GEO<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/热图太丑怎么办(pheatmap的使用)/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jing Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jing">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/05/R中GEO数据的预处理/" itemprop="url">
-              
-                <span itemprop="name">R中GEO数据的预处理</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">热图太丑怎么办(pheatmap的使用)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-05T18:22:23+08:00" content="2019-06-05">
-          06-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-06T13:39:21+08:00">
+                2019-06-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/R/" itemprop="url" rel="index">
+                    <span itemprop="name">R</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/06/热图太丑怎么办(pheatmap的使用)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/热图太丑怎么办(pheatmap的使用)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>准备一个表达谱矩阵，横轴为100个基因，纵轴为208个样本，如下：<br><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdWGribokM45fVyhf43xu7UMqiaxrDzzbibgWEma0vZFAqQ68vtLnuDlUtA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>首先安装pheatmap</p>
+<a id="more"></a>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">source</span><span class="params">(<span class="string">"http://biocoundctor.org/biocLite.R"</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">biocLite</span><span class="params">(<span class="string">"pheatmap"</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>然后加载</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">library</span><span class="params">(pheatmap)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>最简单的调用如下：</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pheatmap（<span class="keyword">profile</span>）</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdTvFAdTlWglNoTFWx4zO0ZLhC0wKxSotuzRO1soubZlSw6ufb17qcjg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>长这个鬼样子简直没法看，从右侧可以看出数据跨度很大从0-200以上，图中大部分蓝色显示其实大部分值应该是在0-50这个区间，所以我们调整策略，取log(x+1)   </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pheatmap(<span class="name">log2</span>(<span class="name">profile+1</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdprlu2Wlq2pleCqxl3SOfX5UsecIqTMzAn688ibBnnBC3xLdhyiacwxfA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>比之前好看了点，但是还是有好多黄色，但是很明显看得出来聚类效果比之前好多了，但是很明显最小值太小以至于几乎看不到蓝色，颜色区分不开，进一步的来调整一下区间  </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bk = unique(<span class="name">c</span>(<span class="name">seq</span>(<span class="name">-5</span>,<span class="number">5</span>, length=100)))</span><br><span class="line">pheatmap(<span class="name">log2</span>(<span class="name">profile+1</span>),breaks = bk)</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdXkvYsKNhh5GlnYUORFWW6UznBFTVk2Atw0AiceBZEZLayic0GzGfuCUA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>此时看起来还不错，但是这个颜色有点不舒服，换个颜色试试  </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bk = unique(<span class="name">c</span>(<span class="name">seq</span>(<span class="name">-5</span>,<span class="number">5</span>, length=100)))</span><br><span class="line">pheatmap(<span class="name">log2</span>(<span class="name">profile+1</span>),breaks = bk</span><br><span class="line">         ,color = colorRampPalette(<span class="name">c</span>(<span class="string">"navy"</span>, <span class="string">"white"</span>, <span class="string">"firebrick3"</span>))(<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdJ2EJBTl6ribkLZtpOugGr1rUZCuS4KDdW9uUuCjXicuKb9qJHj75xrKQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>看起来还行，但是从图中可以看到那个中间那条一长条全是白色，事实上我想看看一个基因在不同样本中的高低，所以我应该使用纵轴的zscore进行标准化一下  </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bk = unique(<span class="name">c</span>(<span class="name">seq</span>(<span class="name">-5</span>,<span class="number">5</span>, length=100)))</span><br><span class="line">pheatmap(<span class="name">log2</span>(<span class="name">profile+1</span>),breaks = bk,scale = 'column'</span><br><span class="line">         ,color = colorRampPalette(<span class="name">c</span>(<span class="string">"navy"</span>, <span class="string">"white"</span>, <span class="string">"firebrick3"</span>))(<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcd72TicwfyeQTwiaWRxleA2EJuCgMIg9zIhUa63dhfibdiaW3hgGMdJVkmmg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>从图中可以看到有些基因在不同的样本中表达趋势比较一致的情况了，此时纵轴样本一团糊没什么意义，先把他去掉  </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bk = unique(<span class="name">c</span>(<span class="name">seq</span>(<span class="name">-5</span>,<span class="number">5</span>, length=100)))</span><br><span class="line">pheatmap(<span class="name">log2</span>(<span class="name">profile+1</span>),breaks = bk,scale = 'column',show_rownames = F</span><br><span class="line">         ,color = colorRampPalette(<span class="name">c</span>(<span class="string">"navy"</span>, <span class="string">"white"</span>, <span class="string">"firebrick3"</span>))(<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdczbic2EGgyAic8aBpicz9KosU9coyD7iavgUMPjiaGeqIlUqSqcpg5odyNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bk</span> = unique(c(seq(-<span class="number">5</span>,<span class="number">5</span>, <span class="attr">length=100)))</span></span><br><span class="line"><span class="attr">clust=pheatmap(log2(profile+1),breaks</span> = bk,<span class="attr">scale</span> = 'column'</span><br><span class="line">         ,<span class="attr">show_rownames</span> = F</span><br><span class="line">         ,<span class="attr">color</span> = colorRampPalette(c(<span class="string">"navy"</span>, <span class="string">"white"</span>, <span class="string">"firebrick3"</span>))(<span class="number">100</span>))</span><br><span class="line"><span class="attr">annotation_col</span> = data.frame(</span><br><span class="line">  <span class="attr">ClassGene</span> = factor(paste0('Cluster',cutree(clust$tree_col,<span class="number">10</span>)))</span><br><span class="line">)</span><br><span class="line">rownames(annotation_col) = colnames(profile)</span><br><span class="line">pheatmap(log2(profile+<span class="number">1</span>),<span class="attr">breaks</span> = bk,<span class="attr">scale</span> = 'column'</span><br><span class="line">         ,<span class="attr">show_rownames</span> = F</span><br><span class="line">         ,<span class="attr">annotation_col</span> = annotation_col</span><br><span class="line">         ,<span class="attr">color</span> = colorRampPalette(c(<span class="string">"navy"</span>, <span class="string">"white"</span>, <span class="string">"firebrick3"</span>))(<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/N3X4LBoaQjUAu3YsPUTAf9lxFibISNdcdgVhEB8fl6H9UR2Aj1co9MYP9nA8XkianxPLQjF3Dic7CmSs26MmO3IPg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="image"><br>就写到这吧，还没有涉及的参数：</p>
+<p>clustering_distance_rows = “correlation”#表示行聚类使用皮尔森相关系数聚类，当然也可以自定义如drows = dist(test, method = “minkowski”)；clustering_distance_rows = drows</p>
+<p>cluster_row = FALSE#表示行不聚类</p>
+<p>legend = FALSE#表示右侧图例不显示</p>
+<p>display_numbers = TRUE#表示在热图中格子显示对应的数字，在那种横纵轴数目比较小是时候可用，比如样本间相关系数聚类</p>
+<p>number_format = “%.1e”#当显示数字时数字的显示方式</p>
+<p>cellwidth = 15, cellheight = 12#表示热图中小方格的宽度和高度</p>
+<p>fontsize = 8#表示热图中字体显示的大小</p>
+<p>filename = “test.pdf”#表示直接就保存成test.pdf图片了</p>
+<p>labels_row#可以自己定义横轴的显示字符，默认上图是基因名</p>
+<p>main#类似title啦</p>
+<p>gaps_col#产生一个间隔，就像有些文章中的那种分类后每个分类都有一个间隔。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pheatmap/" rel="tag"># pheatmap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/06/Ven图、聚类分析、相关性分析/" rel="next" title="Ven图、聚类分析、相关性分析">
+                <i class="fa fa-chevron-left"></i> Ven图、聚类分析、相关性分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/06/Analysis of single cell RNA-seq data/" rel="prev" title="Analysis of single cell RNA-seq data">
+                Analysis of single cell RNA-seq data <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -317,6 +506,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -576,6 +772,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
