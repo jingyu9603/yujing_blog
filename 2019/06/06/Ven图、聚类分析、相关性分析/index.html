@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.gif?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.gif?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.gif?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="Ven图 聚类分析 相关性分析,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、绘制Ven图123456789101112131415161718192021222324#载入相应的安装包library(VennDiagram)#进入到需要绘制Ven图的文件夹setwd(&quot;/data/YJ/YanNa/stringtie/trs/Pt/diff10/LPt&quot;)#filelist=list(&quot;Pt15&quot;,&quot;Pt17&quot;,&quot;Pt19&quot;,&quot;Pt2-&quot;,&quot;Pt20&quot;,&quot;Pt22&quot;,">
+<meta name="keywords" content="Ven图 聚类分析 相关性分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ven图、聚类分析、相关性分析">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/Ven图、聚类分析、相关性分析/index.html">
+<meta property="og:site_name" content="Jing">
+<meta property="og:description" content="1、绘制Ven图123456789101112131415161718192021222324#载入相应的安装包library(VennDiagram)#进入到需要绘制Ven图的文件夹setwd(&quot;/data/YJ/YanNa/stringtie/trs/Pt/diff10/LPt&quot;)#filelist=list(&quot;Pt15&quot;,&quot;Pt17&quot;,&quot;Pt19&quot;,&quot;Pt2-&quot;,&quot;Pt20&quot;,&quot;Pt22&quot;,">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=d_%7Bij%7D+%3D%5Csqrt%7B%5Csum_%7Bp%3D1%7D%5E%7Bp%7D%7B+%5Cleft%28+x_%7Bip%7D+-x_%7Bjp%7D+%5Cright%29%5E%7B2%7D+%7D+%7D+">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-e6a84d52ffeaa71cfc2947d8141a0932_hd.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9218360-772f8e43d7d95533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
+<meta property="og:updated_time" content="2019-06-06T05:30:23.639Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ven图、聚类分析、相关性分析">
+<meta name="twitter:description" content="1、绘制Ven图123456789101112131415161718192021222324#载入相应的安装包library(VennDiagram)#进入到需要绘制Ven图的文件夹setwd(&quot;/data/YJ/YanNa/stringtie/trs/Pt/diff10/LPt&quot;)#filelist=list(&quot;Pt15&quot;,&quot;Pt17&quot;,&quot;Pt19&quot;,&quot;Pt2-&quot;,&quot;Pt20&quot;,&quot;Pt22&quot;,">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=d_%7Bij%7D+%3D%5Csqrt%7B%5Csum_%7Bp%3D1%7D%5E%7Bp%7D%7B+%5Cleft%28+x_%7Bip%7D+-x_%7Bjp%7D+%5Cright%29%5E%7B2%7D+%7D+%7D+">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/06/Ven图、聚类分析、相关性分析/">
+
+
+
+
+
+  <title>Ven图、聚类分析、相关性分析 | Jing</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/Ven图、聚类分析、相关性分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jing Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ven图、聚类分析、相关性分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-06T13:30:07+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/R/" itemprop="url" rel="index">
+                    <span itemprop="name">R</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/06/Ven图、聚类分析、相关性分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/Ven图、聚类分析、相关性分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="1、绘制Ven图"><a href="#1、绘制Ven图" class="headerlink" title="1、绘制Ven图"></a>1、绘制Ven图</h5><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#载入相应的安装包</span></span><br><span class="line"><span class="keyword">library</span>(VennDiagram)</span><br><span class="line"><span class="comment">#进入到需要绘制Ven图的文件夹</span></span><br><span class="line">setwd(<span class="string">"/data/YJ/YanNa/stringtie/trs/Pt/diff10/LPt"</span>)</span><br><span class="line"><span class="comment">#filelist=list("Pt15","Pt17","Pt19","Pt2-","Pt20","Pt22","Pt3","Pt5","Pt6","Pt8","Pt9")</span></span><br><span class="line"><span class="comment">#将需要绘制Ven图的样本的rowname汇集到一个list中</span></span><br><span class="line">filelist=list(<span class="string">"LPt16"</span>,<span class="string">"LPt24"</span>)</span><br><span class="line"><span class="keyword">for</span> (Pt <span class="keyword">in</span> filelist)&#123;</span><br><span class="line">  files=list.files(path=<span class="string">"/data/YJ/YanNa/stringtie/trs/Pt/diff10/LPt"</span>,pattern = Pt)</span><br><span class="line">  trslist=list()</span><br><span class="line">  image_name=paste(Pt,<span class="string">"_Ven"</span>,<span class="string">".tiff"</span>,sep=<span class="string">""</span>)</span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> files)&#123;</span><br><span class="line">    base=strsplit(i,<span class="string">"_"</span>)[[<span class="number">1</span>]][<span class="number">1</span>]</span><br><span class="line">    trslist[base]=read.table(i,header = <span class="literal">T</span>,colClasses = c(<span class="string">"character"</span>,<span class="string">"NULL"</span>,<span class="string">"NULL"</span>))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">#设置颜色</span></span><br><span class="line">  num=<span class="number">148</span></span><br><span class="line">  col=c()</span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:length(trslist))&#123;</span><br><span class="line">    col[i]=colors()[num]</span><br><span class="line">    num=num+<span class="number">150</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">#绘制Ven图</span></span><br><span class="line">  venn.diagram(trslist,filename = image_name,col=<span class="string">"transparent"</span>,fil=col,alpha=<span class="number">0.5</span>,resolution = <span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<h5 id="2、聚类分析"><a href="#2、聚类分析" class="headerlink" title="2、聚类分析"></a>2、聚类分析</h5><h6 id="一、K均值聚类"><a href="#一、K均值聚类" class="headerlink" title="一、K均值聚类"></a>一、K均值聚类</h6><p>K均值聚类又称为动态聚类，它的计算方法较为简单，也不需要输入距离矩阵。首先要指定聚类的分类个数N，随机取N个样本作为初始类的中心，计算各样本与类中心的距离并进行归类，所有样本划分完成后重新计算类中心，重复这个过程直到类中心不再变化。 </p>
+<h6 id="二、层次聚类"><a href="#二、层次聚类" class="headerlink" title="二、层次聚类"></a>二、层次聚类</h6><p>层次聚类又称为系统聚类，首先要定义样本之间的距离关系，距离较近的归为一类，较远的则属于不同的类。可用于定义“距离”的统计量包括了欧氏距离(euclidean)、马氏距离(manhattan)、 两项距离(binary)、明氏距离(minkowski)。还包括相关系数和夹角余弦。</p>
+<p>层次聚类首先将每个样本单独作为一类，然后将不同类之间距离最近的进行合并，合并后重新计算类间距离。这个过程一直持续到将所有样本归为一类为止。在计算类间距离时则有六种不同的方法，分别是最短距离法、最长距离法、类平均法、重心法、中间距离法、离差平方和法。 </p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==!!注意==</span><br><span class="line">K均值聚类能处理比层次聚类更大的数据集。由于K均值聚类在开始要随机选择k个中心点，在每次调用函数时可能获得不同的方案。使用</span><br><span class="line">set.seed() 函数可以保证结果是可复制的。此外，聚类方法对初始中心值的选择也很敏感。</span><br></pre></td></tr></table></figure>
+
+<p>==聚类分析的一般步骤==  </p>
+<ol>
+<li>选择合适的变量，这是第一步，也可能是最重要的一步，再高级的聚类方法也不能弥补聚类变量选择不好的问题。因此，首先选择你感觉可能对于识别和理解数据中不同观测值分组有重要影响的变量。  </li>
+<li>缩放数据，由于不同变量可能有不同的变化范围，以免那些变化范围大的变量对结果有不成比例的影响，常常需要在分析之前缩放数据。通常，将每个变量标准化为均值为0和标准差为1的变量。还有另外两种替代方法，比如每个变量被其最大值相除，或该变量减去它的平均值并除以变量的平均绝对偏差。实现代码如下：<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df1 &lt;- apply(<span class="name">mydata</span>, <span class="number">2</span>, function(<span class="name">x</span>)&#123;(<span class="name">x-mean</span>(<span class="name">x</span>))/sd(<span class="name">x</span>)&#125;)</span><br><span class="line">df2 &lt;- apply(<span class="name">mydata</span>, <span class="number">2</span>, function(<span class="name">x</span>)&#123;x/max(<span class="name">x</span>)&#125;)</span><br><span class="line">df3 &lt;- apply(<span class="name">mydata</span>, <span class="number">2</span>, function(<span class="name">x</span>)&#123;(<span class="name">x</span> – mean(<span class="name">x</span>))/mad(<span class="name">x</span>)&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>在R中可以通过使用scale()函数实现df1代码片段的功能。</p>
+<ol start="3">
+<li>寻找异常点，通常聚类方法对于异常值比较敏感，对此有几种解决方法，通过outliers包中的函数来筛选异常单变量离群点，mvoutlier包中 有识别多元变量的离群点的函数。  </li>
+<li>计算距离，虽然不同的聚类算法差异很大，但是通常需要计算被聚类的实体之间的距离。两个观测之间最常用的距离度量是欧几里得距离，其它常用的还有曼哈顿距离、兰氏距离、非对称二元距离、最大距离和闵可夫斯基距离。在下文的论述当中默认采用欧几里得距离。<br>两个观测值之间的欧几里得距离定义如下：<br><img src="https://www.zhihu.com/equation?tex=d_%7Bij%7D+%3D%5Csqrt%7B%5Csum_%7Bp%3D1%7D%5E%7Bp%7D%7B+%5Cleft%28+x_%7Bip%7D+-x_%7Bjp%7D+%5Cright%29%5E%7B2%7D+%7D+%7D+" alt="image"><br>用R中自带的dist()函数可以计算矩阵或数据框中所有行（观测值）之间的距离，dist()函数的格式为dist(x, method =)，默认为欧几里得距离。</li>
+</ol>
+<p>观测值之间的距离越大，则异质性越大，距离也越远。</p>
+<p>通常，欧几里得距离作为连续型数据的距离度量，对于其它类型的数据，可以使用cluster包中的daisy()函数获得包含任意二元、名义、有序或者连续属性组合的相异矩阵，并且cluster包中的其它函数可以用这种异质性进行聚类分析。</p>
+<p>另外，当一个观测中的某一个变量变换范围太大，缩放数据有利于均衡各变量的影响。</p>
+<ol start="5">
+<li>选择聚类算法，对于不同类型和不同样本量的数据，针对性地选择不同的聚类算法，从大的方面讲有层次聚类和划分聚类，通常前者对于小样本来说很实用（如150个观测值或更少），而且这种情况下嵌套聚类更实用；后者能够处理更大的数据量，但是需要事先确定聚类的个数。然后，不管是层次聚类还是划分聚类，都需要一个特定的聚类算法，不同算法有着各自的优缺点，需要根据工程实践进行综合比选确定。  </li>
+<li>获 得一种或多种聚类方法，这是步骤5的延续。  </li>
+<li>确定类的数目，在确定最终聚类方案时必须确定类的数目。通常尝试不同的类型（比如2~K）并比较解的质量。NbClust包中的NbClust()函数30个不同的指标来帮助你进行选择，指标如此之多，可见这在聚类分析当中是个难题。</li>
+<li>获得最终的聚类解决方案，类的个数确定以后，就可以提取出子群，形成最终的聚类方案。  </li>
+<li>结果可视化，可视化可以帮助判定聚类方案的意义和用处，层次聚类的结果通常表示为一个树状图。划分的结果通常利用可视化双变量聚类图来表示。  </li>
+<li>解读类，聚类方案确定以后，结果也出来了，必须对其进行解读。比如，一个类中的观测值有何相似之处，不同类之间有何不同，这一步通常通过获得类中每个变量的汇总统计来完成。对于连续数据，每一类中变量的均值和中位数会被计算出来。对于混合数据（数据中包含分类变量），结果中将返回各类的众数或类别分布。  </li>
+<li>验证结果，对于聚类方案的验证相当于确认下，如果采用不同的聚类方法或者不同样本，是否会产生相同的类。fpc、clv和clValid包包含了评估聚类解的稳定性的函数。</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装并加载包</span></span><br><span class="line">  <span class="comment">#使用k-means聚类所需要的包：factoextra和cluster</span></span><br><span class="line">  site=<span class="string">"https://mirrors.tuna.tsinghua.edu.cn/CRAN"</span></span><br><span class="line">  pakeags_list=c(<span class="string">"factoextra"</span>,<span class="string">"cluster"</span>,<span class="string">"NbClust"</span>)</span><br><span class="line">  <span class="keyword">for</span>(p <span class="keyword">in</span> pakeags_list)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!suppressWarnings(suppressMessages(<span class="keyword">require</span>(p, character.only = <span class="literal">TRUE</span>, quietly = <span class="literal">TRUE</span>, warn.conflicts = <span class="literal">FALSE</span>))))&#123;</span><br><span class="line">      install.packages(p, repos=site)</span><br><span class="line">      suppressWarnings(suppressMessages(<span class="keyword">library</span>(p, character.only = <span class="literal">TRUE</span>, quietly = <span class="literal">TRUE</span>, warn.conflicts = <span class="literal">FALSE</span>)))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (!requireNamespace(<span class="string">"BiocManager"</span>, quietly = <span class="literal">TRUE</span>))</span><br><span class="line">    install.packages(<span class="string">"BiocManager"</span>)</span><br><span class="line">  BiocManager::install(<span class="string">"ConsensusClusterPlus"</span>, version = <span class="string">"3.8"</span>)</span><br><span class="line">  <span class="comment">#载入相关的程序包</span></span><br><span class="line">  <span class="keyword">library</span>(ConsensusClusterPlus)</span><br><span class="line">  <span class="keyword">library</span>(factoextra)</span><br><span class="line">  <span class="keyword">library</span>(cluster)</span><br><span class="line">  <span class="keyword">library</span>(NbClust)</span><br><span class="line">  <span class="keyword">library</span>(reshape2)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#载入数据</span></span><br><span class="line">data&lt;-read.table(<span class="string">"Pt_RPt_LW.txt"</span>,<span class="attribute">header</span>=T)</span><br><span class="line"><span class="comment">#根据rownames去掉数据中的重复行</span></span><br><span class="line">index&lt;-duplicated(data<span class="variable">$trs</span>)</span><br><span class="line">data&lt;-data[!index,]</span><br><span class="line">rownames(data)&lt;-data<span class="variable">$trs</span></span><br><span class="line">data&lt;-data[,-1]</span><br><span class="line"><span class="comment">#t()函数对数据进行转置，形成，行为基因名，列为样本名称的数据集</span></span><br><span class="line">tdata&lt;-as.matrix(t(data))</span><br><span class="line"><span class="comment">#去掉数据集中的NA函数</span></span><br><span class="line">my_data&lt;-na.omit(tdata)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在聚类之前，进行不要的数据检查即数据描述性统计，如平均值、标准差</span></span><br><span class="line"><span class="attribute">stats</span>=data.frame(Min=apply(data,2,min),</span><br><span class="line">                 <span class="attribute">Med</span>=apply(data,2,median),</span><br><span class="line">                 <span class="attribute">Mean</span>=apply(data,2,mean),</span><br><span class="line">                 <span class="attribute">SD</span>=apply(data,2,sd),</span><br><span class="line">                 <span class="attribute">Max</span>=apply(data,2,max)</span><br><span class="line">  </span><br><span class="line">)</span><br><span class="line"><span class="attribute">stats</span>=round(stats,1)#保留小数点最后一位</span><br><span class="line"></span><br><span class="line"><span class="comment">#数据标准化和评估</span></span><br><span class="line"><span class="comment">#变量有很大的方差及均值时需要进行标准化</span></span><br><span class="line"><span class="attribute">df</span>=scale(my_data)</span><br><span class="line"><span class="comment">#数据集群性评估，使用get_clust_tendency()计算Hopkins统计量</span></span><br><span class="line"><span class="attribute">res</span>=get_clust_tendency(df,40,graph=TRUE)</span><br><span class="line">res<span class="variable">$hopkins_stat</span> #Hopkins统计量的值&lt;0.5,表明数据是高度可聚合的</span><br><span class="line">res<span class="variable">$plot</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="使用Kmean函数"><a href="#使用Kmean函数" class="headerlink" title="使用Kmean函数"></a>使用Kmean函数</h6><p>算法的简单描述如下：</p>
+<ol>
+<li>选择K个中心点（随机选择K行）；  </li>
+<li>把每个数据点分配到离它最近的中心点； </li>
+<li>重新计算每类中的点到该类中心点距离的平均值；</li>
+<li>分配每个数据到它最近的中心点； </li>
+<li>重复步骤3和步骤4，直到所有的观测值不再被分配或是达到最大的迭代次数。  </li>
+</ol>
+<p>从算法上可以看出，初始中心值的选择对于结果也非常敏感，kmeans()函数有一个nstart选项可以尝试多种初始配置并输出最好的一个结果。举个例子，加上nstart=25会生成25个初始配置，一般来说，我们推荐使用这种方法。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#计算最适合的K-mean聚类的分类数</span></span><br><span class="line">  set.seed(<span class="number">123</span>)</span><br><span class="line">  gap_stat=clusGap(df,FUN=kmeans,nstart=<span class="number">25</span>,K.max = <span class="number">10</span>,B=<span class="number">500</span>)</span><br><span class="line">  fviz_gap_stat(gap_stat)</span><br><span class="line">  km.res=kmeans(df,<span class="number">2</span>,nstart = <span class="number">25</span>)</span><br><span class="line">  fviz_cluster(km.res,df)</span><br></pre></td></tr></table></figure>
+
+<h6 id="eclust-增强的聚类分析"><a href="#eclust-增强的聚类分析" class="headerlink" title="eclust():增强的聚类分析"></a>eclust():增强的聚类分析</h6><p>与其他聚类分析包相比，eclust()有以下优点：  </p>
+<ul>
+<li>简化了聚类分析的工作流程，</li>
+<li>可以用于计算层次聚类和分区聚类，</li>
+<li>eclust()自动计算最佳聚类簇数。 </li>
+<li>自动提供Silhouette plot，可以结合ggplot2绘制优美的图形<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用eclust()的K均值聚类</span></span><br><span class="line">res.km&lt;-eclust(df,<span class="string">"kmeans"</span>)</span><br><span class="line">fviz_gap_stat(res.km$gap_stat)</span><br><span class="line"><span class="comment">#利用eclust()做层次聚类</span></span><br><span class="line">res.hc=eclust(df,<span class="string">"hclust"</span>)</span><br><span class="line">fviz_dend(res.hc,rect = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h6 id="利用hclust-做层次聚类"><a href="#利用hclust-做层次聚类" class="headerlink" title="利用hclust()做层次聚类"></a>利用hclust()做层次聚类</h6><ol>
+<li>层次聚类的算法如下：</li>
+<li>定义每一个观测值（行或单元）为一类；</li>
+<li>计算每类和其他各类的距离；</li>
+<li>把距离最短的两类合并成一类，减少一个类的个数；</li>
+<li>重复步骤2和3，直到包含所有观测值的类合并成单个类为止。  </li>
+</ol>
+<p>不同的层次聚类算法主要区别在于它们对类的定义不同，常见的五种聚类方法及其距离定义如下<br><img src="https://pic3.zhimg.com/80/v2-e6a84d52ffeaa71cfc2947d8141a0932_hd.png" alt="image"><br>层次聚类方法的实现格式如下：  </p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hclust(d, <span class="function"><span class="keyword">method</span>=)</span></span><br></pre></td></tr></table></figure>
+
+<p>其中d是通过dist() 函数产生的距离矩阵， 并且方法包括 “single” 、”complete” 、”average” 、”centroid”和”ward”。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先求样本之间两两相似性</span></span><br><span class="line">result&lt;-dist(df,<span class="attribute">method</span>=<span class="string">"euclidean"</span>)</span><br><span class="line"><span class="comment">#产生层次结构</span></span><br><span class="line">result_hc&lt;-hclust(<span class="attribute">d</span>=result,method = <span class="string">"ward.D2"</span>)</span><br><span class="line"><span class="comment">#初步结果</span></span><br><span class="line">fviz_dend(result_hc,<span class="attribute">cex</span>=0.3)</span><br><span class="line"><span class="comment">#可视化展示</span></span><br><span class="line">fviz_dend(result_hc,<span class="attribute">k</span>=2,cex=0.3,k_colors = c(<span class="string">"#E7B800"</span>, <span class="string">"#00AFBB"</span>),color_labels_by_k = <span class="literal">TRUE</span>,rect = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="利用NbCluster-函数首先选择最适合的分类k"><a href="#利用NbCluster-函数首先选择最适合的分类k" class="headerlink" title="利用NbCluster()函数首先选择最适合的分类k"></a>利用NbCluster()函数首先选择最适合的分类k</h6><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##利用NbCluster()函数首先选择最适合的分类k</span></span><br><span class="line">  res_nbclust&lt;-NbClust(df,<span class="attr">distance</span> = <span class="string">"euclidean"</span>,min.<span class="attr">nc</span> = <span class="number">2</span>,max.<span class="attr">nc</span> = <span class="number">10</span>,<span class="attr">method</span> = <span class="string">"complete"</span>,<span class="attr">index</span> = <span class="string">"all"</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、相关性分析"><a href="#3、相关性分析" class="headerlink" title="3、相关性分析"></a>3、相关性分析</h5><p>相关系数的显著性水平<br>使用Hmisc包，计算矩阵相关系数及其对应的显著性水平</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(Hmisc)</span><br><span class="line">res&lt;-rcorr(as.matrix(mtcars))</span><br><span class="line">res</span><br><span class="line">       mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span><br><span class="line">mpg   <span class="number">1.00</span> -<span class="number">0.85</span> -<span class="number">0.85</span> -<span class="number">0.78</span>  <span class="number">0.68</span> -<span class="number">0.87</span>  <span class="number">0.42</span>  <span class="number">0.66</span>  <span class="number">0.60</span>  <span class="number">0.48</span> -<span class="number">0.55</span></span><br><span class="line">cyl  -<span class="number">0.85</span>  <span class="number">1.00</span>  <span class="number">0.90</span>  <span class="number">0.83</span> -<span class="number">0.70</span>  <span class="number">0.78</span> -<span class="number">0.59</span> -<span class="number">0.81</span> -<span class="number">0.52</span> -<span class="number">0.49</span>  <span class="number">0.53</span></span><br><span class="line">disp -<span class="number">0.85</span>  <span class="number">0.90</span>  <span class="number">1.00</span>  <span class="number">0.79</span> -<span class="number">0.71</span>  <span class="number">0.89</span> -<span class="number">0.43</span> -<span class="number">0.71</span> -<span class="number">0.59</span> -<span class="number">0.56</span>  <span class="number">0.39</span></span><br><span class="line">hp   -<span class="number">0.78</span>  <span class="number">0.83</span>  <span class="number">0.79</span>  <span class="number">1.00</span> -<span class="number">0.45</span>  <span class="number">0.66</span> -<span class="number">0.71</span> -<span class="number">0.72</span> -<span class="number">0.24</span> -<span class="number">0.13</span>  <span class="number">0.75</span></span><br><span class="line">drat  <span class="number">0.68</span> -<span class="number">0.70</span> -<span class="number">0.71</span> -<span class="number">0.45</span>  <span class="number">1.00</span> -<span class="number">0.71</span>  <span class="number">0.09</span>  <span class="number">0.44</span>  <span class="number">0.71</span>  <span class="number">0.70</span> -<span class="number">0.09</span></span><br><span class="line">wt   -<span class="number">0.87</span>  <span class="number">0.78</span>  <span class="number">0.89</span>  <span class="number">0.66</span> -<span class="number">0.71</span>  <span class="number">1.00</span> -<span class="number">0.17</span> -<span class="number">0.55</span> -<span class="number">0.69</span> -<span class="number">0.58</span>  <span class="number">0.43</span></span><br><span class="line">qsec  <span class="number">0.42</span> -<span class="number">0.59</span> -<span class="number">0.43</span> -<span class="number">0.71</span>  <span class="number">0.09</span> -<span class="number">0.17</span>  <span class="number">1.00</span>  <span class="number">0.74</span> -<span class="number">0.23</span> -<span class="number">0.21</span> -<span class="number">0.66</span></span><br><span class="line">vs    <span class="number">0.66</span> -<span class="number">0.81</span> -<span class="number">0.71</span> -<span class="number">0.72</span>  <span class="number">0.44</span> -<span class="number">0.55</span>  <span class="number">0.74</span>  <span class="number">1.00</span>  <span class="number">0.17</span>  <span class="number">0.21</span> -<span class="number">0.57</span></span><br><span class="line">am    <span class="number">0.60</span> -<span class="number">0.52</span> -<span class="number">0.59</span> -<span class="number">0.24</span>  <span class="number">0.71</span> -<span class="number">0.69</span> -<span class="number">0.23</span>  <span class="number">0.17</span>  <span class="number">1.00</span>  <span class="number">0.79</span>  <span class="number">0.06</span></span><br><span class="line">gear  <span class="number">0.48</span> -<span class="number">0.49</span> -<span class="number">0.56</span> -<span class="number">0.13</span>  <span class="number">0.70</span> -<span class="number">0.58</span> -<span class="number">0.21</span>  <span class="number">0.21</span>  <span class="number">0.79</span>  <span class="number">1.00</span>  <span class="number">0.27</span></span><br><span class="line">carb -<span class="number">0.55</span>  <span class="number">0.53</span>  <span class="number">0.39</span>  <span class="number">0.75</span> -<span class="number">0.09</span>  <span class="number">0.43</span> -<span class="number">0.66</span> -<span class="number">0.57</span>  <span class="number">0.06</span>  <span class="number">0.27</span>  <span class="number">1.00</span></span><br><span class="line"></span><br><span class="line">n= <span class="number">32</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">P</span><br><span class="line">     mpg    cyl    disp   hp     drat   wt     qsec   vs     am     gear  </span><br><span class="line">mpg         <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0171</span> <span class="number">0.0000</span> <span class="number">0.0003</span> <span class="number">0.0054</span></span><br><span class="line">cyl  <span class="number">0.0000</span>        <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0004</span> <span class="number">0.0000</span> <span class="number">0.0022</span> <span class="number">0.0042</span></span><br><span class="line">disp <span class="number">0.0000</span> <span class="number">0.0000</span>        <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0131</span> <span class="number">0.0000</span> <span class="number">0.0004</span> <span class="number">0.0010</span></span><br><span class="line">hp   <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span>        <span class="number">0.0100</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.1798</span> <span class="number">0.4930</span></span><br><span class="line">drat <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0100</span>        <span class="number">0.0000</span> <span class="number">0.6196</span> <span class="number">0.0117</span> <span class="number">0.0000</span> <span class="number">0.0000</span></span><br><span class="line">wt   <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span>        <span class="number">0.3389</span> <span class="number">0.0010</span> <span class="number">0.0000</span> <span class="number">0.0005</span></span><br><span class="line">qsec <span class="number">0.0171</span> <span class="number">0.0004</span> <span class="number">0.0131</span> <span class="number">0.0000</span> <span class="number">0.6196</span> <span class="number">0.3389</span>        <span class="number">0.0000</span> <span class="number">0.2057</span> <span class="number">0.2425</span></span><br><span class="line">vs   <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.0117</span> <span class="number">0.0010</span> <span class="number">0.0000</span>        <span class="number">0.3570</span> <span class="number">0.2579</span></span><br><span class="line">am   <span class="number">0.0003</span> <span class="number">0.0022</span> <span class="number">0.0004</span> <span class="number">0.1798</span> <span class="number">0.0000</span> <span class="number">0.0000</span> <span class="number">0.2057</span> <span class="number">0.3570</span>        <span class="number">0.0000</span></span><br><span class="line">gear <span class="number">0.0054</span> <span class="number">0.0042</span> <span class="number">0.0010</span> <span class="number">0.4930</span> <span class="number">0.0000</span> <span class="number">0.0005</span> <span class="number">0.2425</span> <span class="number">0.2579</span> <span class="number">0.0000</span>       </span><br><span class="line">carb <span class="number">0.0011</span> <span class="number">0.0019</span> <span class="number">0.0253</span> <span class="number">0.0000</span> <span class="number">0.6212</span> <span class="number">0.0146</span> <span class="number">0.0000</span> <span class="number">0.0007</span> <span class="number">0.7545</span> <span class="number">0.1290</span></span><br><span class="line">     carb  </span><br><span class="line">mpg  <span class="number">0.0011</span></span><br><span class="line">cyl  <span class="number">0.0019</span></span><br><span class="line">disp <span class="number">0.0253</span></span><br><span class="line">hp   <span class="number">0.0000</span></span><br><span class="line">drat <span class="number">0.6212</span></span><br><span class="line">wt   <span class="number">0.0146</span></span><br><span class="line">qsec <span class="number">0.0000</span></span><br><span class="line">vs   <span class="number">0.0007</span></span><br><span class="line">am   <span class="number">0.7545</span></span><br><span class="line">gear <span class="number">0.1290</span></span><br><span class="line">carb</span><br></pre></td></tr></table></figure>
+
+<p>提取矩阵相关及其P值</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">CorMatrix &lt;- function(cor,p) &#123;</span><br><span class="line">+                               ut &lt;- upper.tri(cor) </span><br><span class="line">+                               data.frame(row = rownames(cor)[row(cor)[ut]] ,</span><br><span class="line">+                               column = rownames(cor)[col(cor)[ut]], </span><br><span class="line">+                               cor =(cor)[ut], </span><br><span class="line">+                               p = p[ut] )</span><br><span class="line">+ &#125;</span><br><span class="line">res &lt;- rcorr(as.matrix(mtcars))</span><br><span class="line">&gt; CorMatrix (res$r, res$P)</span><br><span class="line">    row column         cor            p</span><br><span class="line"><span class="number">1</span>   mpg    cyl <span class="number">-0.85216196</span> <span class="number">6.112688e-10</span></span><br><span class="line"><span class="number">2</span>   mpg   disp <span class="number">-0.84755138</span> <span class="number">9.380328e-10</span></span><br><span class="line"><span class="number">3</span>   cyl   disp  <span class="number">0.90203287</span> <span class="number">1.803002e-12</span></span><br><span class="line"><span class="number">4</span>   mpg     hp <span class="number">-0.77616837</span> <span class="number">1.787835e-07</span></span><br><span class="line"><span class="number">5</span>   cyl     hp  <span class="number">0.83244745</span> <span class="number">3.477861e-09</span></span><br><span class="line"><span class="number">6</span>  disp     hp  <span class="number">0.79094859</span> <span class="number">7.142679e-08</span></span><br><span class="line"><span class="number">7</span>   mpg   drat  <span class="number">0.68117191</span> <span class="number">1.776240e-05</span></span><br><span class="line"><span class="number">8</span>   cyl   drat <span class="number">-0.69993811</span> <span class="number">8.244636e-06</span></span><br><span class="line"><span class="number">9</span>  disp   drat <span class="number">-0.71021393</span> <span class="number">5.282022e-06</span></span><br><span class="line"><span class="number">10</span>   hp   drat <span class="number">-0.44875912</span> <span class="number">9.988772e-03</span></span><br><span class="line"><span class="number">11</span>  mpg     wt <span class="number">-0.86765938</span> <span class="number">1.293958e-10</span></span><br><span class="line"><span class="number">12</span>  cyl     wt  <span class="number">0.78249579</span> <span class="number">1.217567e-07</span></span><br><span class="line"><span class="number">13</span> disp     wt  <span class="number">0.88797992</span> <span class="number">1.222311e-11</span></span><br><span class="line"><span class="number">14</span>   hp     wt  <span class="number">0.65874789</span> <span class="number">4.145827e-05</span></span><br><span class="line"><span class="number">15</span> drat     wt <span class="number">-0.71244065</span> <span class="number">4.784260e-06</span></span><br><span class="line"><span class="number">16</span>  mpg   qsec  <span class="number">0.41868403</span> <span class="number">1.708199e-02</span></span><br><span class="line"><span class="number">17</span>  cyl   qsec <span class="number">-0.59124207</span> <span class="number">3.660533e-04</span></span><br><span class="line"><span class="number">18</span> disp   qsec <span class="number">-0.43369788</span> <span class="number">1.314404e-02</span></span><br><span class="line"><span class="number">19</span>   hp   qsec <span class="number">-0.70822339</span> <span class="number">5.766253e-06</span></span><br><span class="line"><span class="number">20</span> drat   qsec  <span class="number">0.09120476</span> <span class="number">6.195826e-01</span></span><br><span class="line"><span class="number">21</span>   wt   qsec <span class="number">-0.17471588</span> <span class="number">3.388683e-01</span></span><br><span class="line"><span class="number">22</span>  mpg     vs  <span class="number">0.66403892</span> <span class="number">3.415937e-05</span></span><br><span class="line"><span class="number">23</span>  cyl     vs <span class="number">-0.81081180</span> <span class="number">1.843018e-08</span></span><br><span class="line"><span class="number">24</span> disp     vs <span class="number">-0.71041589</span> <span class="number">5.235012e-06</span></span><br><span class="line"><span class="number">25</span>   hp     vs <span class="number">-0.72309674</span> <span class="number">2.940896e-06</span></span><br><span class="line"><span class="number">26</span> drat     vs  <span class="number">0.44027846</span> <span class="number">1.167553e-02</span></span><br><span class="line"><span class="number">27</span>   wt     vs <span class="number">-0.55491568</span> <span class="number">9.798492e-04</span></span><br><span class="line"><span class="number">28</span> qsec     vs  <span class="number">0.74453544</span> <span class="number">1.029669e-06</span></span><br><span class="line"><span class="number">29</span>  mpg     am  <span class="number">0.59983243</span> <span class="number">2.850207e-04</span></span><br><span class="line"><span class="number">30</span>  cyl     am <span class="number">-0.52260705</span> <span class="number">2.151207e-03</span></span><br><span class="line"><span class="number">31</span> disp     am <span class="number">-0.59122704</span> <span class="number">3.662114e-04</span></span><br><span class="line"><span class="number">32</span>   hp     am <span class="number">-0.24320426</span> <span class="number">1.798309e-01</span></span><br><span class="line"><span class="number">33</span> drat     am  <span class="number">0.71271113</span> <span class="number">4.726790e-06</span></span><br><span class="line"><span class="number">34</span>   wt     am <span class="number">-0.69249526</span> <span class="number">1.125440e-05</span></span><br><span class="line"><span class="number">35</span> qsec     am <span class="number">-0.22986086</span> <span class="number">2.056621e-01</span></span><br><span class="line"><span class="number">36</span>   vs     am  <span class="number">0.16834512</span> <span class="number">3.570439e-01</span></span><br><span class="line"><span class="number">37</span>  mpg   gear  <span class="number">0.48028476</span> <span class="number">5.400948e-03</span></span><br><span class="line"><span class="number">38</span>  cyl   gear <span class="number">-0.49268660</span> <span class="number">4.173297e-03</span></span><br><span class="line"><span class="number">39</span> disp   gear <span class="number">-0.55556920</span> <span class="number">9.635921e-04</span></span><br><span class="line"><span class="number">40</span>   hp   gear <span class="number">-0.12570426</span> <span class="number">4.930119e-01</span></span><br><span class="line"><span class="number">41</span> drat   gear  <span class="number">0.69961013</span> <span class="number">8.360110e-06</span></span><br><span class="line"><span class="number">42</span>   wt   gear <span class="number">-0.58328700</span> <span class="number">4.586601e-04</span></span><br><span class="line"><span class="number">43</span> qsec   gear <span class="number">-0.21268223</span> <span class="number">2.425344e-01</span></span><br><span class="line"><span class="number">44</span>   vs   gear  <span class="number">0.20602335</span> <span class="number">2.579439e-01</span></span><br><span class="line"><span class="number">45</span>   am   gear  <span class="number">0.79405876</span> <span class="number">5.834043e-08</span></span><br><span class="line"><span class="number">46</span>  mpg   carb <span class="number">-0.55092507</span> <span class="number">1.084446e-03</span></span><br><span class="line"><span class="number">47</span>  cyl   carb  <span class="number">0.52698829</span> <span class="number">1.942340e-03</span></span><br><span class="line"><span class="number">48</span> disp   carb  <span class="number">0.39497686</span> <span class="number">2.526789e-02</span></span><br><span class="line"><span class="number">49</span>   hp   carb  <span class="number">0.74981247</span> <span class="number">7.827810e-07</span></span><br><span class="line"><span class="number">50</span> drat   carb <span class="number">-0.09078980</span> <span class="number">6.211834e-01</span></span><br><span class="line"><span class="number">51</span>   wt   carb  <span class="number">0.42760594</span> <span class="number">1.463861e-02</span></span><br><span class="line"><span class="number">52</span> qsec   carb <span class="number">-0.65624923</span> <span class="number">4.536949e-05</span></span><br><span class="line"><span class="number">53</span>   vs   carb <span class="number">-0.56960714</span> <span class="number">6.670496e-04</span></span><br><span class="line"><span class="number">54</span>   am   carb  <span class="number">0.05753435</span> <span class="number">7.544526e-01</span></span><br><span class="line"><span class="number">55</span> gear   carb  <span class="number">0.27407284</span> <span class="number">1.290291e-01</span></span><br></pre></td></tr></table></figure>
+
+<p>corrplot</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">"corrplot"</span>)</span><br><span class="line"><span class="function"><span class="title">library</span><span class="params">(corrplot)</span></span></span><br><span class="line">cor&lt;-cor(data,method = <span class="string">"pearson"</span>)</span><br><span class="line"><span class="function"><span class="title">corrplot</span><span class="params">(cor,order = <span class="string">"hclust"</span>,method=<span class="string">"shade"</span>,addrect = <span class="number">2</span>,tl.cex=<span class="number">0.25</span>,tl.col = <span class="string">"blue"</span>)</span></span></span><br><span class="line">write.table(cor,file=<span class="string">"Pt_RLW_FPKM_cor.txt"</span>,sep=<span class="string">" "</span>,row<span class="selector-class">.names</span> = TRUE,col<span class="selector-class">.names</span> = TRUE,quote=F)</span><br></pre></td></tr></table></figure>
+
+<p>scatter plots</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(PerformanceAnalytics)</span><br><span class="line">chart.Correlation(mtcars,histogram = <span class="literal">TRUE</span>,<span class="attribute">pch</span>=19)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9218360-772f8e43d7d95533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt="image"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ven图-聚类分析-相关性分析/" rel="tag"># Ven图 聚类分析 相关性分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/06/使用biomaRT转换ID/" rel="next" title="使用biomaRT转换ID">
+                <i class="fa fa-chevron-left"></i> 使用biomaRT转换ID
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Jing Yu">
+            
+              <p class="site-author-name" itemprop="name">Jing Yu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jingyu9603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:11yj3312@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、绘制Ven图"><span class="nav-number">1.</span> <span class="nav-text">1、绘制Ven图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、聚类分析"><span class="nav-number">2.</span> <span class="nav-text">2、聚类分析</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一、K均值聚类"><span class="nav-number">2.1.</span> <span class="nav-text">一、K均值聚类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二、层次聚类"><span class="nav-number">2.2.</span> <span class="nav-text">二、层次聚类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用Kmean函数"><span class="nav-number">2.3.</span> <span class="nav-text">使用Kmean函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#eclust-增强的聚类分析"><span class="nav-number">2.4.</span> <span class="nav-text">eclust():增强的聚类分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#利用hclust-做层次聚类"><span class="nav-number">2.5.</span> <span class="nav-text">利用hclust()做层次聚类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#利用NbCluster-函数首先选择最适合的分类k"><span class="nav-number">2.6.</span> <span class="nav-text">利用NbCluster()函数首先选择最适合的分类k</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、相关性分析"><span class="nav-number">3.</span> <span class="nav-text">3、相关性分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jing Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'qf3QmPxySWNGSWi82McRwPS2-gzGzoHsz',
+        appKey: 'jeBjNYIDyqLMmB5KgBnI0ITW',
+        placeholder: 'Just go go',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
